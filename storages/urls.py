@@ -1,10 +1,11 @@
 from django.conf.urls import url
 
 from storages import views
-from storages.views import StorageView
 
 urlpatterns = [
-    url(r'^storages', StorageView.as_view(), name='storages'),
-    url(r'^add-storage', views.add_storage, name='add_storage'),
-    url(r'^storages-detail', views.detail_view, name='storages_detail'),
+    url(r'^$', views.storage_page, name='storages'),
+    url(r'^storage/add/$', views.add_storage, name='add_storage'),
+    url(r'^storage/(?P<storage_id>\d+)/$', views.detail_view, name='storages_detail'),
+    url(r'^storage/(?P<storage_id>\d+)/delete/$', views.delete_view, name='storage_delete'),
+    url(r'^storage/(?P<storage_id>\d+)/update/$', views.update_view, name='storage_update'),
 ]

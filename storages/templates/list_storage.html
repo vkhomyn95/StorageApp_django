@@ -1,24 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<br><br>
+<div class="container">
     <ul>
         {% for storage in storages %}
-            <li>{{ storage.name}}</li>
-            <li>{{ storage.city}}</li>
-            <li>{{ storage.address}}</li>
+            <nav aria-label="breadcrumb">
+                 <ol class="breadcrumb" style="background-color:#8acc51">
+                     <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'storages_detail' storage.id  %}" style="color:black;">{{ storage.name }}</a></li>
+                </ol>
+            </nav>
         {% endfor %}
+        <button type="button" class="btn btn-primary"><a href="{% url 'add_storage'%}" style="color:white;text-decoration: none;">Добавити склад</a></button>
+
     </ul>
+</div>
 
-    <a href="{% url 'storages_detail' %}">Детально про склади</a>
-
-
-    <form action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {% for field in form %}
-            <div class="items-form">
-                <div class="form-group{% if field.errors %} is-invalid{% endif %}">{{ field }}</div>
-            </div>
-        {% endfor %}
-        <button type="submit"><a href="{% url 'add_storage'%}" style="color:white;text-decoration: none;">Добавити склад</a></button>
-    </form>
 {% endblock %}

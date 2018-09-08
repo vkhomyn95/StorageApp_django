@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h2>{{ contact.username }}</h2>
-({{ contact.email }}), {{ contact.sex }}, {{ contact.date_of_birth }}
-</body>
-</html>
+{% extends 'base.html'%}
+{% block content %}
+<br>
+<div class="container">
+    <h2 style="text-align:center;">{{ contact.username }}</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><b>Email:</b> {{ contact.email }} </li>
+        <li class="list-group-item"><b>Стать:</b> {{ contact.get_team_display }} </li>
+        <li class="list-group-item"><b>День народження:</b> {{ contact.date_of_birth }} </li>
+    </ul><br><br>
+</div>
+{% endblock %}

@@ -16,6 +16,7 @@ class ContactFaces(AbstractUser):
     )
     sex = models.SmallIntegerField(choices=SEX_CHOICES, default=MALE)
     date_of_birth = models.DateField(null=True)
+    team = models.IntegerField(choices=SEX_CHOICES, default=MALE)
 
     def __str__(self):
         return self.email

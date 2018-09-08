@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'', include('contactfaces.urls')),
     url(r'', include('place.urls')),
     url(r'', include('shops.urls')),
-    url(r'', include('storages.urls')),
+    url(r'storages/', include('storages.urls')),
     url(r'^$', views.main),
 
 ]

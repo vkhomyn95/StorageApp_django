@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<br><br>
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item"><b>Назва:</b> {{ storage.name }} </li>
+        <li class="list-group-item"><b>Розташування</b><a href="{% url 'cities_detail' storage.city.pk %}" >{{ storage.address }}</a></li>
+        <li class="list-group-item"><b>Адрес:</b> {{ storage.address }}</li>
+    </ul><br><br>
+    <div class="buttons-center" style="display:flex; flex-direction:row;">
+    <form action="{% url 'storage_delete' storage.pk %}" method="POST" >
+        {% csrf_token %}
+        <input type="submit" class="btn btn-warning" style="color:black" value="Добавити магазин" />
+    </form>
+
+    <button class="btn btn-danger" style="margin-left:10px;"><a href="{% url 'storage_update' storage.pk %}" style='color:white'>Редагувати магазин</a></button>
+    </div>
+</div>
+{% endblock %}
