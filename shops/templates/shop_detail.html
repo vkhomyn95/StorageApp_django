@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<ul class="list-group">
+    <li class="list-group-item"><b>Вид магазину:</b> {{ shops_detail.type_of_store }}</li>
+    <li class="list-group-item"><b>Назва:</b> {{ shops_detail.name }} </li>
+    <li class="list-group-item"><b>Власник магазину:</b> {{ shops_detail.owner }}</li>
+    <li class="list-group-item"><b>Продавці:</b> {{ shops_detail.sellers }}</li>
+    <li class="list-group-item"><b>Склади:</b> {{ shops_detail.storage }}</li>
+    <li class="list-group-item"><b>Розташування:</b> {{ shops_detail.city }}</li>
+    <li class="list-group-item"><b>Адрес:</b> {{ shops_detail.address }}</li>
+    <li class="list-group-item"><b>Сайт:</b> <a href=" {{ shops_detail.site }} ">{{ shops_detail.site }}</a></li>
+</ul><br><br>
+
+<button type="button" class="btn btn-warning"><a href="{% url 'shop_update' shops_detail.pk  %}" style="color:black">Редагувати магазин</a></button>
+<button type="button" class="btn btn-danger"><a href="{% url 'shops_delete' shops_detail.pk  %}" style='color:white;'>Видалити магазин</a></button>
+
+{% endblock %}

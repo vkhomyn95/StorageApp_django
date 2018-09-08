@@ -1,0 +1,8 @@
+{% extends 'base.html'%}
+{% block content %}
+ {{ cities_detail.name }} ({{ cities_detail.country }})
+
+<a href="{% url 'update_city' cities_detail.pk  %}">Update City</a>
+<a href="{% url 'delete_city' cities_detail.pk  %}">Delete City</a>
+
+{% endblock %}

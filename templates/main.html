@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<br><br><br>
+<div class="container">
+    <div class="row">
+         <div class="col">
+            <div class="card">
+                <img class="card-img-top" src="http://themediaonline.co.za/wp-content/uploads/2018/01/hands-coffee-smartphone-technology.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="{% url 'contacts' %}" class="btn btn-primary">Контакти</a>
+                </div>
+            </div>
+        </div>
+          <div class="col">
+            <div class="card">
+                <img class="card-img-top" src="http://bst-mc.ru/wp-content/uploads/2018/05/Location.png" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="{% url 'cities' %}" class="btn btn-primary">Розташування</a>
+                </div>
+            </div>
+        </div>
+          <div class="col">
+            <div class="card">
+                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6N_aJV9OgUu-HU5iuZbK0xFYHbX0sq-WJufuwGpyn291rbvCG" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="{% url 'shops' %}" class="btn btn-primary">Магазини</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img class="card-img-top" src="http://www.pegasusprintsolutions.co.uk/resources/images/services/storage.png" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="{% url 'storages' %}" class="btn btn-primary">Склади</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

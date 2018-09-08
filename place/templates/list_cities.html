@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        {% for city in cities %}
+        <li>
+            <a href="{% url 'cities_detail' city.pk  %}">    {{ city.name }}{{ city.country }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_city'%}">Add city</a>
+{% endblock %}

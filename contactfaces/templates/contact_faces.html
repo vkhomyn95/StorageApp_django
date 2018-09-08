@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for contact in contacts %}
+         <nav aria-label="breadcrumb">
+             <ol class="breadcrumb" style="background-color:#8acc51">
+                 <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'contacts_detail' contact.pk  %}" style="color:black;">{{ contact.username }}</a></li>
+            </ol>
+         </nav>
+
+    {% endfor %}
+
+
+
+{% endblock %}
