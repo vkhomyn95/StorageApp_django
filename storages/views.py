@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 
 # Create your views here.
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 
@@ -34,12 +35,12 @@ def delete_view(request, storage_id):
     if request.method == 'POST':
         rem = get_object_or_404(Storage, id=storage_id)
         rem.delete()
-
     return redirect(reverse('storages'))
 
 
 def update_view(request, storage_id):
     upd = get_object_or_404(Storage, id=storage_id)
+
     form = StorageAddForm(request.POST or None, instance=upd)
     if request.method == 'POST':
         if form.is_valid():
@@ -48,4 +49,5 @@ def update_view(request, storage_id):
             upd.address = form.cleaned_data['address']
             # upd.save(update_fields=('name',))
             upd.save()
+
     return render(request, 'add_storage.html', {'form': form})

@@ -7,7 +7,7 @@ from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from place.forms import CountryAddForm, CityAddForm
-from place.models import City
+from place.models import City, Country
 
 
 class CityView(ListView):

@@ -1,8 +1,12 @@
 {% extends 'base.html'%}
 {% block content %}
- {{ cities_detail.name }} ({{ cities_detail.country }})
-
-<a href="{% url 'update_city' cities_detail.pk  %}">Update City</a>
-<a href="{% url 'delete_city' cities_detail.pk  %}">Delete City</a>
-
+<br><br>
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item"><b>City:</b> {{ cities_detail.name }}</li>
+    <li class="list-group-item"><b>Country:</b> {{ cities_detail.country }}</li>
+  </ul><br>
+ <button type="button" class="btn btn-warning"><a href="{% url 'update_city' cities_detail.pk  %}" style="color:black">Редагувати місто</a></button>
+ <button type="button" class="btn btn-danger"><a href="{% url 'delete_city' cities_detail.pk  %}" style='color:white;'>Видалити місто</a></button>
+</div>
 {% endblock %}
