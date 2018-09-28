@@ -8,12 +8,12 @@
         <li class="list-group-item"><b>Адрес:</b> {{ storage.address }}</li>
     </ul><br><br>
     <div class="buttons-center" style="display:flex; flex-direction:row;">
-    <form action="{% url 'storage_delete' storage.pk %}" method="POST" >
+    <form action="{% url 'storage_update' storage.pk %}" method="POST" >
         {% csrf_token %}
         <input type="submit" class="btn btn-warning" style="color:black" value="Редагувати магазин" />
     </form>
 
-    <button class="btn btn-danger" style="margin-left:10px;"><a href="{% url 'storage_update' storage.pk %}" style='color:white'>Видалити магазин</a></button>
+    <button class="btn btn-danger" style="margin-left:10px;"><a href="{% url 'storage_delete' storage.pk %}" style='color:white'>Видалити магазин</a></button>
     </div>
 </div>
 {% endblock %}

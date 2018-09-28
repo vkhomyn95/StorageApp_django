@@ -9,9 +9,9 @@ from place.models import City
 
 
 class Storage(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=50)
     city = models.ForeignKey(City)
-    address = models.CharField(max_length=30)
+    address = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name

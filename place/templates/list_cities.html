@@ -5,10 +5,9 @@
 <br><br>
     <div class="container">
         {% for location in cities %}
-        <h5 style="text-align:center;">{{ location.country }}</h5>
         <ul class="list-group">
                 <li class="list-group-item">
-                    <a href="{% url 'cities_detail' location.pk  %}">{{ location.name }}</a>
+                    <b>{{ location.country }}</b>  <a href="{% url 'cities_detail' location.pk  %}">{{ location.name }}</a>
                 </li>
         </ul><br>
         {% endfor %}
